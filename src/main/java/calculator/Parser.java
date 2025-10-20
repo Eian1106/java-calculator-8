@@ -36,4 +36,14 @@ public class Parser {
     public static List<String> getDelimitersList(){
         return List.copyOf(delimiters);
     }
+
+    public static String[] splitDelimiter(String text) {
+        StringBuilder delimitersRegex = new StringBuilder();
+        delimitersRegex.append("[");
+        for (String delimiter : delimiters) {
+            delimitersRegex.append(delimiter);
+        }
+        delimitersRegex.append("]");
+        return text.split(delimitersRegex.toString());
+    }
 }
