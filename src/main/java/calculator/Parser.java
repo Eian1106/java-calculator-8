@@ -32,4 +32,8 @@ public class Parser {
     public static void addDelimiter(String text) {
         delimiters.add(text);
     }
+
+    public static List<String> getDelimitersList(){
+        return List.copyOf(delimiters);
+    }
 }
