@@ -54,6 +54,10 @@ public class Parser {
         }
 
         return Arrays.stream(strArr)
+                .map(s -> {
+                    String trimmed = s.trim();
+                    return trimmed.isEmpty() ? "0" : trimmed;
+                })
                 .mapToInt(Integer::parseInt)
                 .boxed()
                 .toArray(Integer[]::new);
