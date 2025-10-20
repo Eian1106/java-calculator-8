@@ -1,6 +1,7 @@
 package calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Parser {
@@ -45,5 +46,16 @@ public class Parser {
         }
         delimitersRegex.append("]");
         return text.split(delimitersRegex.toString());
+    }
+
+    public static Integer[] stringToInteger(String[] strArr) {
+        if (strArr == null) {
+            return new Integer[0];
+        }
+
+        return Arrays.stream(strArr)
+                .mapToInt(Integer::parseInt)
+                .boxed()
+                .toArray(Integer[]::new);
     }
 }
